@@ -1,0 +1,15 @@
+{
+  "id": "weekend-weather",
+  "name": "Weekend weather",
+  "summary": "What the next two days look like in a place.",
+  "capability": "Checks the weekend weather for a place. Live lookup only on Grok.",
+  "supports": ["A city or region", "A short weekend window"],
+  "needs": ["A place"],
+  "trigger": { "kind": "input", "detail": "Runs when a place is filled in." },
+  "inputs": [{ "name": "place", "type": "text", "required": true, "description": "City or region." }],
+  "outputs": [{ "name": "forecast", "description": "What to expect, and what is uncertain." }],
+  "onError": "If the lookup fails, say that. Do not invent a forecast.",
+  "script": "What should someone in {{place}} know about the weather this weekend? Lead with the days that matter. Name the source when you have one.",
+  "skills": ["research", "write"],
+  "origin": "template"
+}

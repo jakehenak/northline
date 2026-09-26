@@ -1,0 +1,15 @@
+{
+  "id": "weekend-in-a-city",
+  "name": "Weekend in a city",
+  "summary": "One walk, one meal, and a rain backup.",
+  "capability": "Plans a short Saturday in a named city without inventing a closed venue.",
+  "supports": ["Any city name", "A rain backup", "A single day"],
+  "needs": ["A city"],
+  "trigger": { "kind": "manual", "detail": "Runs when you press Run." },
+  "inputs": [{ "name": "city", "type": "text", "required": true, "description": "City to plan around." }],
+  "outputs": [{ "name": "plan", "description": "Walk, meal, and what to do if it rains." }],
+  "onError": "Name the part you could not plan. Do not invent a place.",
+  "script": "Plan a Saturday in {{city}}: one walk, one meal, and a backup if it rains. Keep each stop to one sentence. If you are unsure a place is open, say so.",
+  "skills": ["write"],
+  "origin": "template"
+}
